@@ -80,12 +80,24 @@ public class Display extends Canvas implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("run");
+//		int fps = 60;
+//		double timePerTick = 1000000000 / fps;  // = 1.6666666E7
+		double timePerTick = 1.6;
+		
+		long lastTime = System.nanoTime();
+		long now;
+		double delta = 0;
+		
 		while( true ) {
-			render();
-			
-		}
+			now = System.nanoTime();
+			delta += (now - lastTime) / timePerTick;
+			lastTime = now;
 
+			if(delta >= 1) {
+				render();
+				delta --;
+			}
+		}
 	}
 
 	public synchronized void start() {
