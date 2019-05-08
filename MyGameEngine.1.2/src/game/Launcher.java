@@ -1,9 +1,5 @@
 package game;
 
-import java.awt.Canvas;
-import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
-
 import game.classes.Engine;
 
 public class Launcher {
