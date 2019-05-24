@@ -44,17 +44,17 @@ public class Engine extends Canvas implements Runnable, KeyListener, MouseListen
 	public Game game;
 	private Input input;
 	
-	public Imagen imagem;// = new Sprite("icon.png", 0,0,32,32);
+	public GameImage imagem;// = new Sprite("icon.png", 0,0,32,32);
 	//Image icon = Toolkit.getDefaultToolkit().getImage("images\\icon.png");
 	
-	
+	/*Construtor sem parâmetros*/
 	public Engine() {
 		image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 		createDisplay();
 		game = new Game();
 		input = new Input();
 	}
-
+	/*Contrutor com 3 parâmetros*/
 	public Engine(String title, int width, int height) {
 		this.title = title;
 		this.width = width;
@@ -103,11 +103,12 @@ public class Engine extends Canvas implements Runnable, KeyListener, MouseListen
 		Graphics g = image.createGraphics();
 
 		g = bs.getDrawGraphics(); // Cria um contexto gráfico para o desenho buffe
+//		//////////////////////////////////////
 		g.setColor(new Color(33, 33, 33));
 		g.fillRect(0, 0, width*SCALE, height*SCALE);
 		
 		game.render(g);
-		
+//		//////////////////////////////////////
 		bs.show();
 		g.dispose();
 //		bs.dispose(); // somente se for 2 e de buffer
@@ -129,7 +130,7 @@ public class Engine extends Canvas implements Runnable, KeyListener, MouseListen
 	/**Método que contém o ciclo loop que atualiza todo o jogo em 60-frames por segundos**/
 	@Override
 	public void run() {
-
+		requestFocus();
 		int fps = 60;
 		double timePerTick = 1000000000 / fps; // = 1.6666666E7
 
@@ -203,7 +204,6 @@ public class Engine extends Canvas implements Runnable, KeyListener, MouseListen
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 

@@ -4,16 +4,16 @@ import java.awt.Graphics;
 
 import game.Game;
 import game.classes.Elements;
-import game.classes.Imagen;
+import game.classes.GameImage;
 
 public class Player extends Elements{
 	
-	Imagen player;
+	GameImage player;
 	Game game;
 	
 	public Player() {
 		game = new Game();
-		player = new Imagen("icon", 20, 20, 33,33);
+		player = new GameImage("icon", 20, 20, 33,33);
 	
 	}
 	

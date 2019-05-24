@@ -1,5 +1,9 @@
 package game.utils;
 
+/**
+ * Esta classe serve apenas para mostrar a que tempo o programa está sendo
+ * executado.
+ */
 public class TimerClock {
 
 	static double timer = System.currentTimeMillis();
@@ -28,8 +32,8 @@ public class TimerClock {
 		}
 	}
  
-	 /* Este mÃ©todo conta em segundos atÃ© o valor passado e depois volta a conta desde zero. 
-	 * Serve para updates do jogo que sÃ£o feitos conforme o tempo que deseja*/
+	 /* Este método conta em segundos até o valor passado e depois volta a conta desde zero. 
+	 * Serve para updates do jogo que são feitos conforme o tempo que deseja*/
 	public static int countSeconds(int MaxSeconds) {
 		
 		if (System.currentTimeMillis() - timer >= 1000) {

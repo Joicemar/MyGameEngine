@@ -1,13 +1,13 @@
 package game.input;
 
 
-import game.classes.Imagen;
+import game.classes.GameImage;
 
 public class Input {
 	
 	
 	public Input() {
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	private static double X;

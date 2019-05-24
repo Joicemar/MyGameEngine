@@ -5,33 +5,42 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 import game.classes.Engine;
-import game.classes.Imagen;
+import game.classes.GameImage;
+import game.classes.Sprite;
 import game.input.Input;
 import game.player.Player;
 
 
 public class Game extends Input{
 	
-	public Imagen jogador;
+	public GameImage jogador;
+	Sprite sprite;
+	
 
 	public Game() {
-		
-		jogador = new Imagen("icon",0,0,120,120);
+		sprite = new Sprite(0,0,120,120, 8);
+		//jogador = new GameImage("icon",0,0,120,120);
+		sprite.AddSprite( "frente1");
+		sprite.AddSprite( "frente2");
+		sprite.AddSprite( "frente3");
+		sprite.AddSprite( "frente4");
+	
+	
 	}
 
 	
 	public void update( ) {
 		if( D ) {
-			jogador.moveX(3 );
+			sprite.moveX(3 );
 		}
 		if( A ) {
-			jogador.moveX(-3);
+			sprite.moveX(-3);
 		}
 		if( W ) {
-			jogador.moveY( -3 );
+			sprite.moveY( -3 );
 		}
 		if ( S ) {
-			jogador.moveY(3);
+			sprite.moveY(3);
 		}
 		if( MousePressed ) {
 
@@ -78,8 +87,11 @@ public class Game extends Input{
 	
 	public void render(Graphics g) {
 
-		jogador.render(g);
+		//jogador.render(g);
+		int x = 3;
 		
+		sprite.render(g, true);
+		 
 	}
 	
 	
