@@ -8,7 +8,7 @@ public class Launcher {
 	
 	public static void main(String[] args) {
 		
-		Engine display = new Engine("J Engine", 800 , 510);
+		Engine display = new Engine("Game Engine", 800 , 510);
 //		Engine display = new Engine( );
 		display.start();
 	}
